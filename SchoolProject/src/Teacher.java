@@ -40,4 +40,8 @@ public class Teacher {
     public String getTeacherInfo(){
         return "Name: " + this.getFirstName() + " " + this.getLastName() + "\tSubject: " + this.getSubject();
     }
+    //This overides the already existing toString method so that when we print out the class, it doesn't print out the location in memory
+    public String toString(){
+        return "Name: " + this.getFirstName() + " " + this.getLastName() + "\tSubject: " + this.getSubject();
+    }
 }
