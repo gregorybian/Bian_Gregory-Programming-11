@@ -50,4 +50,8 @@ public class Student {
     public String  getStudentInfo(){
         return "Name: " + this.getFirstName() + " " + this.getLastName() + "\tGrade: " + this.getGrade();
     }
+    //This overides the already existing toString method so that when we print out the class, it doesn't print out the location in memory
+    public String toString(){
+        return "Name: " + this.getFirstName() + " " + this.getLastName() + "\tGrade: " + this.getGrade();
+    }
 }
