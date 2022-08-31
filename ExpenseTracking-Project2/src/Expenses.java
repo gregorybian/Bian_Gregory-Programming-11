@@ -22,6 +22,8 @@ public class Expenses {
     }
 
     //This method writes the information that the user gives into a text file so it can be saved and loaded later on
+    //Requires: string, filename
+    //Effects: Takes the instance of the class and puts all the information into a text file
     public void writeToFile(String fileName) throws IOException {
         //Filewriter and buffer writer classes are used to write the info of our class into a txt file
         FileWriter fw = new FileWriter(fileName, true);
@@ -35,7 +37,8 @@ public class Expenses {
         bw.write(";\r");
         bw.close();
     }
-
+    //Requires: expense, e
+    //Effects: Returns true if this expense is the same as e, otherwise returns false
     public boolean compareExpenses(Expenses e){
         //This method compares expenses so that we do not get 2 identical expenses by accident
         if((this.type+this.date+this.time+this.goodsOrServices+this.cost).equals(e.type+e.date+e.time+e.goodsOrServices+e.cost)){
@@ -64,6 +67,7 @@ public class Expenses {
     }
 
     //toString Method
+    //Effects: returns the goodsorservices when the instance of the class is called
     public String toString(){
         return goodsOrServices;
     }
