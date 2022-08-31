@@ -22,6 +22,8 @@ public class Income {
     }
 
     //This method writes the information that the user gives into a text file so it can be saved and loaded later on
+    //Requires: string, filename
+    //Effects: Takes the instance of the class and puts all the information into a text file
     public void writeToFile(String fileName) throws IOException {
         //Filewriter and buffer writer classes are used to write the info of our class into a txt file
         FileWriter fw = new FileWriter(fileName, true);
@@ -35,7 +37,8 @@ public class Income {
         bw.write(";\r");
         bw.close();
     }
-
+    //Requires: income, i
+    //Effects: Returns true if this income is the same as i, otherwise returns false
     public boolean compareIncome(Income i){
         //This method compares income so that we do not get 2 identical incomes by accident
         if((this.type+this.date+this.time+this.incomeSource+this.amount).equals(i.type+i.date+i.time+i.incomeSource+i.amount)){
@@ -64,6 +67,7 @@ public class Income {
     }
 
     //toString Method
+    //Effects: returns the incomesource when the instance of the class is called
     public String toString(){
         return incomeSource;
     }
