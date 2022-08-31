@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Add Expense">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" layoutY="60.0" prefHeight="313.0" prefWidth="186.0" spacing="25.0">
+                           <children>
+                              <Label text="Type of Expense:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label />
+                              <Label text="Date:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Time:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Goods or Services:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Cost:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="237.0" layoutY="14.0" text="Add Expense">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="200.0" layoutY="54.0" prefHeight="63.0" prefWidth="214.0" spacing="5.0">
+                           <children>
+                              <CheckBox fx:id="cbxFood" mnemonicParsing="false" onAction="#selectFoodExpense" text="Food" />
+                              <CheckBox fx:id="cbxHousing" mnemonicParsing="false" onAction="#selectHousingExpense" text="Housing" />
+                              <CheckBox fx:id="cbxTransportation" mnemonicParsing="false" onAction="#selectTransportationExpense" text="Transportation" />
+                              <CheckBox fx:id="cbxOther" mnemonicParsing="false" onAction="#selectOtherExpense" text="Other" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="200.0" layoutY="145.0" prefHeight="224.0" prefWidth="138.0" spacing="22.0">
+                           <children>
+                              <DatePicker fx:id="txtFieldDate" promptText="Choose Date" />
+                              <TextField fx:id="txtFieldTime" promptText="Enter Text" />
+                              <TextField fx:id="txtFieldGoodsOrServices" promptText="Enter Text" />
+                              <TextField fx:id="txtFieldCost" promptText="Enter Decimal" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnSaveExpense" layoutX="399.0" layoutY="173.0" mnemonicParsing="false" onAction="#saveExpense" text="Save and Add" />
+                        <Label fx:id="ErrorCode1" layoutX="359.0" layoutY="208.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Add Income">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox alignment="TOP_RIGHT" layoutY="60.0" prefHeight="313.0" prefWidth="186.0" spacing="25.0">
+                           <children>
+                              <Label text="Type of Income">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label />
+                              <Label text="Date:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Time:">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Income Source">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                              <Label text="Amount">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <Label layoutX="237.0" layoutY="14.0" text="Add Income">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="200.0" layoutY="54.0" prefHeight="63.0" prefWidth="214.0" spacing="5.0">
+                           <children>
+                              <CheckBox fx:id="cbxJob" mnemonicParsing="false" onAction="#selectJobIncome" text="Job" />
+                              <CheckBox fx:id="cbxSideHustle" mnemonicParsing="false" onAction="#selectSideHustleIncome" text="Side Hustle" />
+                              <CheckBox fx:id="cbxGift" mnemonicParsing="false" onAction="#selectGiftIncome" text="Gift" />
+                              <CheckBox fx:id="cbxOther2" mnemonicParsing="false" onAction="#selectOtherIncome" text="Other" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="200.0" layoutY="145.0" prefHeight="224.0" prefWidth="138.0" spacing="22.0">
+                           <children>
+                              <DatePicker fx:id="txtFieldDateIncome" promptText="Choose Date" />
+                              <TextField fx:id="txtFieldTimeIncome" promptText="Enter Text" />
+                              <TextField fx:id="txtIncomeSource" promptText="Enter Text" />
+                              <TextField fx:id="txtFieldAmount" promptText="Enter Decimal" />
+                           </children>
+                        </VBox>
+                        <Button fx:id="btnSaveIncome" layoutX="399.0" layoutY="173.0" mnemonicParsing="false" onAction="#saveIncome" text="Save and Add" />
+                        <Label fx:id="ErrorCode2" layoutX="359.0" layoutY="208.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+          <Tab text="Track Money Spendage">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ListView fx:id="listViewIncome" layoutX="14.0" layoutY="240.0" onMouseClicked="#displayIncome" prefHeight="126.0" prefWidth="156.0" />
+                        <HBox alignment="CENTER" prefHeight="48.0" prefWidth="600.0" spacing="60.0">
+                           <children>
+                              <Label text="Select List:">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                              <CheckBox fx:id="cbxAllSpendage" mnemonicParsing="false" onAction="#selectAllSpendage" text="All Spendage" />
+                              <CheckBox fx:id="cbxYearlySpendage" mnemonicParsing="false" onAction="#selectYearlySpendage" text="Yearly Spendage" />
+                              <CheckBox fx:id="cbxMonthlySpendage" mnemonicParsing="false" onAction="#selectMonthlySpendage" text="Monthly Spendage" />
+                           </children>
+                        </HBox>
+                        <Button layoutX="273.0" layoutY="39.0" mnemonicParsing="false" onAction="#loadSpendage" text="Load" />
+                        <Label layoutX="62.0" layoutY="68.0" text="Expenses">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="68.0" layoutY="220.0" text="Income">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <ListView fx:id="listViewExpenses" layoutX="14.0" layoutY="94.0" onMouseClicked="#displayExpense" prefHeight="126.0" prefWidth="156.0" />
+                        <Label layoutX="219.0" layoutY="70.0" text="Expense Information">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="221.0" layoutY="219.0" text="Income Information">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="445.0" layoutY="136.0" text="Surplus or Deficit:">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER_RIGHT" layoutX="171.0" layoutY="93.0" prefHeight="124.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <Label text="Type of Expense:" />
+                              <Label text="Date:" />
+                              <Label text="Time:" />
+                              <Label text="Goods or Services:" />
+                              <Label text="Cost:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_RIGHT" layoutX="402.0" layoutY="170.0" prefHeight="39.0" prefWidth="101.0" spacing="10.0">
+                           <children>
+                              <Label text="Total Expenses:" />
+                              <Label text="Total Income:" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="516.0" layoutY="170.0" prefHeight="39.0" prefWidth="101.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="lblTotalExpenses" text="0" />
+                              <Label fx:id="lblTotalIncome" text="0" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="419.0" layoutY="240.0" prefHeight="110.0" prefWidth="168.0" spacing="10.0">
+                           <children>
+                              <HBox prefHeight="2.0" prefWidth="168.0" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="lblSurplusOrDeficit" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="9.0" prefWidth="168.0" spacing="5.0">
+                                 <children>
+                                    <Label fx:id="lblSurplusOrDeficit2" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" layoutX="280.0" layoutY="93.0" prefHeight="124.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="lblTypeofExpense" />
+                              <Label fx:id="lblDateExpense" />
+                              <Label fx:id="lblTimeExpense" />
+                              <Label fx:id="lblGoodsorServicesExpense" />
+                              <Label fx:id="lblCostExpense" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_RIGHT" layoutX="171.0" layoutY="241.0" prefHeight="124.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <Label text="Type of Income:" />
+                              <Label text="Date:" />
+                              <Label text="Time:" />
+                              <Label text="Income Source:" />
+                              <Label text="Amount:" />
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER_LEFT" layoutX="280.0" layoutY="241.0" prefHeight="124.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="lblTypeOfIncome" />
+                              <Label fx:id="lblDateIncome" />
+                              <Label fx:id="lblTimeIncome" />
+                              <Label fx:id="lblIncomeSource" />
+                              <Label fx:id="lblAmountIncome" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
