@@ -19,6 +19,9 @@ public class CreateItem {
 
 
     //This method reads selected files and pulls the information out of the file then recreates it into the original objects
+    //Requires: string, filename
+    //Modifies: this
+    //Effects: Reads txt files and returns an arraylist according to type of file
     public static ArrayList createALlItems(String filename) throws IOException {
         //fileReader and bufferReader method to read through the files
         fr = new FileReader(filename);
